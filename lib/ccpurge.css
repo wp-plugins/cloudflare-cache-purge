@@ -1,0 +1,76 @@
+#spinner {
+	width:32px;
+	height:32px;
+	background: url(../lib/spinner.gif) no-repeat;
+	margin: 0 auto;
+	display:none;
+}
+#ccpurge_table_logging_container {
+	margin: 20px 10px;
+	clear: both;
+/*	display: none;*/
+}
+#ccpurge_table_logging_container table {
+	width: 99%;
+	height: 250px;
+	display: block;
+	overflow:scroll;
+}
+#ccpurge_table_logging_container input[type='button']#ccpurge-prev{
+	float:left;
+	margin: 10px 0 0 50px;
+}
+#ccpurge_table_logging_container input[type='button']#ccpurge-next{
+	float:right;
+	margin: 10px 50px;
+}
+#ccpurge_table_logging 	table td {
+	font-color: #666;
+	padding: 2px;
+}
+#ccpurge_table_logging 	table tr.new_record td {
+	background-color: lightblue;
+}
+#ccpurge_table_logging 	table tr.found_record td, #ccpurge_table_logging 	table tr.success td {
+	background-color: #dedede;
+}
+#ccpurge_table_logging 	table tr.error td {
+	background-color: pink;
+}
+#ccpurge_table_logging 	table tr.warning td {
+	background-color: salmon;
+}
+#footer {
+	/*display:none;*/
+}
+#ccpurge-options-form .ccpurge-table td {
+	padding: 6px;
+}
+#ccpurge-options-form .ccpurge-table th {
+	width: 200px;
+	text-align:left;
+}
+#ccpurge-options-form .ccpurge-table th label:after {
+	content: " :";
+}
+#ccpurge-options-form .ccpurge-table .col1 {
+	width: 20px;
+}
+#ccpurge-options-form .ccpurge-table .col2 {
+	width: 400px;
+}
+a.tooltip {
+	width:16px;
+	height:16px;
+	display:block;
+	background: url(../lib/tooltip.png) no-repeat;
+}
+a:hover {background:#ffffff; text-decoration:none;} /*BG color is a must for IE6*/
+a.tooltip span {display:none; padding:2px 3px; margin-left:24px;}
+a.tooltip:hover span{display:inline; position:absolute; background:#ffffff; border:1px solid #cccccc; color:#669933; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);}
+
+
+    
+
+
+
