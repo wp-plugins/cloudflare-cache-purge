@@ -40,6 +40,9 @@ Yes, setting up a Cloudflare account is free and can take less than 5 minutes.
 = 1.0.0 =
 * Initial Wordpress.com version
 
+= 1.0.1 =
+* Namespace css better
+
 == Upgrade Notice ==
 
 = 1.0.0 =

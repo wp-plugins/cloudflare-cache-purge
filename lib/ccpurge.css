@@ -1,4 +1,4 @@
-#spinner {
+#ccpurge-options-form #spinner {
 	width:32px;
 	height:32px;
 	background: url(../lib/spinner.gif) no-repeat;
@@ -40,7 +40,7 @@
 #ccpurge_table_logging 	table tr.warning td {
 	background-color: salmon;
 }
-#footer {
+#ccpurge-options-form #footer {
 	/*display:none;*/
 }
 #ccpurge-options-form .ccpurge-table td {
@@ -59,15 +59,15 @@
 #ccpurge-options-form .ccpurge-table .col2 {
 	width: 400px;
 }
-a.tooltip {
+#ccpurge-options-form a.tooltip {
 	width:16px;
 	height:16px;
 	display:block;
 	background: url(../lib/tooltip.png) no-repeat;
 }
-a:hover {background:#ffffff; text-decoration:none;} /*BG color is a must for IE6*/
-a.tooltip span {display:none; padding:2px 3px; margin-left:24px;}
-a.tooltip:hover span{display:inline; position:absolute; background:#ffffff; border:1px solid #cccccc; color:#669933; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);}
+#ccpurge-options-form a:hover {background:#ffffff; text-decoration:none;} /*BG color is a must for IE6*/
+#ccpurge-options-form a.tooltip span {display:none; padding:2px 3px; margin-left:24px;}
+#ccpurge-options-form a.tooltip:hover span{display:inline; position:absolute; background:#ffffff; border:1px solid #cccccc; color:#669933; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);}
 
 
     
