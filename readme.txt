@@ -12,9 +12,9 @@ Purge your entire Cloudflare cache from within Wordpress.
 
 == Description ==
 
-Purge your entire Cloudflare cache, or an any specific URL, manually - or automatically everytime a post has been updated!  
+Purge your entire Cloudflare cache, or an any specific URL, manually - or automatically everytime a post has been updated!
 
-This plugin was not built by Cloudflare, it was built by Fifty & Fifty - an humanitarian creative studio located in San Diego, California.
+This plugin was not built by Cloudflare, it was built by Fifty & Fifty - a humanitarian creative studio located in San Diego, California.
 
 == Installation ==
 
@@ -42,6 +42,9 @@ Yes, setting up a Cloudflare account is free and can take less than 5 minutes.
 
 = 1.0.1 =
 * Namespace css better
+
+= 1.0.2
+* Multisite domain mapping support - thanks Ed Cooper
 
 == Upgrade Notice ==
 
