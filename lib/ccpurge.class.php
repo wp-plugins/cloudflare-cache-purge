@@ -16,24 +16,24 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 */
 
 class CCPURGE_API {
-	
+
 	var $ccpurge_endpoint 		  = "https://www.cloudflare.com/api_json.html";
 	var $ccpurge_methods 			  = array();
-	var $ccpurge_options 		    = array();	
+	var $ccpurge_options 		    = array();
 	var $ccpurge_url     				= '';
 	var $ccpurge_suppress_debug = false;
-		
+
 	function __construct() {
 		$this->ccpurge_options = get_option('ccpurge_options');
 		isset($this->ccpurge_options['auto_purge']) || $this->ccpurge_options['auto_purge'] = false;
-		if( $this->ccpurge_options['account'] == '' ){
+		if( empty($this->ccpurge_options['account']) ){
 			$this->ccpurge_options['account'] = $this->get_wordpress_domain();
 			update_option('ccpurge_options', $this->ccpurge_options);
 		}
 		$this->build_api_calls();
 		$this->wordpress_upload_dir = wp_upload_dir();
 	}
-	
+
 	function build_api_calls(){
 			$tkn 		= isset($this->ccpurge_options['token']) ? $this->ccpurge_options['token'] : null;
 			$email	= isset($this->ccpurge_options['email']) ? $this->ccpurge_options['email'] : null;
@@ -54,15 +54,15 @@ class CCPURGE_API {
 				)
 			);
 	}
-	
+
 	function return_json_success($data='') {
 		print json_encode( array("success" => 'true', "data" => $data) );
-	}	
-	
+	}
+
 	function return_json_error($error='') {
 		print json_encode( array("success" => 'false', 'error' => array("message" => $error)) );
-	}		
-	
+	}
+
 	function make_api_request($api_method, $extra_post_variables = null){
 		$headers = '';
 
@@ -70,36 +70,36 @@ class CCPURGE_API {
 			ccpurge_transaction_logging('Purge call failed due to missing config options: email=' . $this->ccpurge_options['email'] . ' & token=' . substr($this->ccpurge_options['token'], 0, 10) . '[...]' . ' & domain=' . ( isset($this->ccpurge_options['account']) ? $this->ccpurge_options['account'] : '')  );
 			return;
 		}
-		
+
 		if( is_array($extra_post_variables) ){
 			$post_variables =  array_merge( $this->api_methods[$api_method], $extra_post_variables );
 		}
 		else{
 			$post_variables = $this->api_methods[$api_method];
 		}
-		
+
 		if( isset($this->ccpurge_options['console_calls']) && !$this->ccpurge_suppress_debug ){
 			ccpurge_transaction_logging("\n" . "api url: " . $this->ccpurge_endpoint . "\n" . "api post args: " . print_r($post_variables, true) . "\n", 'print_debug');
 		}
 
 		$results = wp_remote_post($this->ccpurge_endpoint, array( 'headers' => $headers, 'body' => $post_variables) );
-		
+
 		if( isset($this->ccpurge_options['console_details']) && !$this->ccpurge_suppress_debug ){
 			print_r($results);
 		}
-		
+
 		if( is_object($results) ){
 			if( get_class($results) == 'WP_Error' ){
 				$this->return_json_error('Wordpress Error - ' . json_encode($results));
 				die();
-			}			
+			}
 		}
-		
+
 		if($results['response']['code'] != '200'){
 			$this->return_json_error($results['response']['message']);
 			die();
 		}
-		
+
 		return json_decode($results['body']);
 	}
 
