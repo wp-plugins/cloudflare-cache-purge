@@ -49,6 +49,9 @@ Yes, setting up a Cloudflare account is free and can take less than 5 minutes.
 = 1.0.3
 * Small php notice fix
 
+= 1.0.4
+* Hide logs from public-facing pages
+
 == Upgrade Notice ==
 
 = 1.0.0 =

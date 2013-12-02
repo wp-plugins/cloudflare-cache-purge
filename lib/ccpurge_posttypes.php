@@ -15,13 +15,13 @@ function ccpurge_custom_post_types(){
           'not_found' => __( 'No log entries found' ),
           'not_found_in_trash' => __( 'No log entries found in trash' )
       ),
-      'public' => true,
-      'supports' => array('editor'),
+      'public' => false,
+      'supports' => array(),
       'capability_type' => 'post',
       'hierarchical' => false,
-      'rewrite' => array("slug" => "ccpurge_log_entries"),
+      'rewrite' => array("slug" => "ccpurge_log"),
       'show_in_menu' => false,
 	    )
-	);	
+	);
 };
 add_action( 'init', 'ccpurge_custom_post_types' );
