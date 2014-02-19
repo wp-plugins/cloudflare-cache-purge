@@ -1,4 +1,4 @@
-=== CloudFlare Cache Purge ===
+=== CloudFlare(R) Cache Purge ===
 Contributors: shanaver
 Tags: CloudFlare, cache purge, cache clear, API
 Requires at least: 3.0.1
@@ -27,7 +27,7 @@ This plugin was not built by CloudFlare, it was built by Fifty & Fifty - a human
 
 == Frequently Asked Questions ==
 
-= Do I need to have a CloudFlare account to use this plugin =
+= Do I need to have a CloudFlare(R) account to use this plugin =
 
 Yes, setting up a CloudFlare account is free and can take less than 5 minutes.
 
@@ -51,6 +51,9 @@ Yes, setting up a CloudFlare account is free and can take less than 5 minutes.
 
 = 1.0.4
 * Hide logs from public-facing pages
+
+= 1.0.5
+* Update CloudFlare(R) branding
 
 == Upgrade Notice ==
 
