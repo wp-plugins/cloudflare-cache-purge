@@ -1,7 +1,7 @@
 <?php
 /*
 
-Description:  API Integration with Cloudflare to purge your cache
+Description:  API Integration with CloudFlare to purge your cache
 Author:       Bryan Shanaver @ fiftyandfifty.org
 Author URI:   https://www.fiftyandfifty.org/
 Contributors: shanaver

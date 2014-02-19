@@ -1,8 +1,8 @@
 <?php
 
 /*
-Plugin Name:  Cloudflare Cache Purge
-Description:  API Integration with Cloudflare to purge your cache
+Plugin Name:  CloudFlare Cache Purge
+Description:  API Integration with CloudFlare to purge your cache
 Version:      1.0.4
 Author:       Bryan Shanaver @ fiftyandfifty.org
 Author URI:   https://www.fiftyandfifty.org/
@@ -99,7 +99,7 @@ function ccpurge_get_table_logging($verify=false){
 		return false;
 	}
 
-	print "<h3>Cloudflare Cache Purge Logging</h3>";
+	print "<h3>CloudFlare Cache Purge Logging</h3>";
 	print "<table>";
 	print "<tr><th>ID</th><th>Time</th><th>Message</th></tr>";
 	while ( $log_entries->have_posts() ) {
@@ -115,12 +115,12 @@ function ccpurge_get_table_logging($verify=false){
 add_action( 'wp_ajax_ccpurge_get_table_logging', 'ccpurge_get_table_logging' );
 
 function ccpurge_activate() {
-	ccpurge_transaction_logging("Cloudflare Cache Purge - Activated");
+	ccpurge_transaction_logging("CloudFlare Cache Purge - Activated");
 }
 register_activation_hook(__FILE__,'ccpurge_activate');
 
 function ccpurge_deactivate(){
-	ccpurge_transaction_logging('Cloudflare Cache Purge - *Deactivated*');
+	ccpurge_transaction_logging('CloudFlare Cache Purge - *Deactivated*');
 }
 register_deactivation_hook(__FILE__,'ccpurge_deactivate');
 
