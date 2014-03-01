@@ -2,7 +2,7 @@
 Contributors: shanaver
 Tags: CloudFlare, cache purge, cache clear, API
 Requires at least: 3.0.1
-Tested up to: 3.5.1
+Tested up to: 3.8.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -27,9 +27,13 @@ This plugin was not built by CloudFlare, it was built by Fifty & Fifty - a human
 
 == Frequently Asked Questions ==
 
-= Do I need to have a CloudFlare(R) account to use this plugin =
+= Do I need to have a CloudFlare(R) account to use this plugin? =
 
 Yes, setting up a CloudFlare account is free and can take less than 5 minutes.
+
+= If I set posts/pages to auto-purge on add/update, does the homepage URL get purged as well?
+
+Yes, we assume that you have a blogroll that would need to be updated on the homepage.
 
 == Screenshots ==
 
@@ -54,6 +58,9 @@ Yes, setting up a CloudFlare account is free and can take less than 5 minutes.
 
 = 1.0.5
 * Update CloudFlare(R) branding
+
+= 1.0.6
+* Add a FAQ item
 
 == Upgrade Notice ==
 
