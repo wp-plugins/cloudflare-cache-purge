@@ -31,9 +31,17 @@ This plugin was not built by CloudFlare, it was built by Fifty & Fifty - a human
 
 Yes, setting up a CloudFlare account is free and can take less than 5 minutes.
 
-= If I set posts/pages to auto-purge on add/update, does the homepage URL get purged as well?
+= Does it purge anything on page/post creation?
+
+Yes, if you set 'Auto Purge on Update' in the admin it will fire on Wordpress' 'publish' hook which includes new pages/posts.  Typically the page/post url won't exist in you CloudFlare cache yet so just the homepage would get purged.
+
+= If you set posts/pages to auto-purge on add/update, does the homepage URL get purged as well?
 
 Yes, we assume that you have a blogroll that would need to be updated on the homepage.
+
+= Are any other URLs purged automatically if I set 'Auto Purge on Update'?
+
+No, just the page/post permalink & the homepage.  You would have to manually purge any other pages that need to get updated.
 
 == Screenshots ==
 
@@ -60,7 +68,7 @@ Yes, we assume that you have a blogroll that would need to be updated on the hom
 * Update CloudFlare(R) branding
 
 = 1.0.6
-* Add a FAQ item
+* Add more FAQ items
 
 == Upgrade Notice ==
 
