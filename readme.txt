@@ -70,6 +70,9 @@ No, just the page/post permalink & the homepage.  You would have to manually pur
 = 1.0.6
 * Add more FAQ items
 
+= 1.0.7
+* Fix ajax error on post update
+
 == Upgrade Notice ==
 
 = 1.0.0 =

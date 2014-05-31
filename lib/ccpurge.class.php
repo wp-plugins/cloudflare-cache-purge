@@ -96,8 +96,7 @@ class CCPURGE_API {
 		}
 
 		if($results['response']['code'] != '200'){
-			$this->return_json_error($results['response']['message']);
-			die();
+			ccpurge_transaction_logging(print_r($results, true), 'error');
 		}
 
 		return json_decode($results['body']);
