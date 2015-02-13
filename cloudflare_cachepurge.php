@@ -3,7 +3,7 @@
 /*
 Plugin Name:  CloudFlare(R) Cache Purge
 Description:  API Integration with CloudFlare to purge your cache
-Version:      1.0.7
+Version:      1.1
 Author:       Bryan Shanaver @ fiftyandfifty.org
 Author URI:   https://www.fiftyandfifty.org/
 Contributors: shanaver
@@ -16,7 +16,7 @@ Neither the name of Alex Moss or pleer nor the names of its contributors may be 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-define('CCPURGE_VERSION', '1.0.7');
+define('CCPURGE_VERSION', '1.1');
 
 define('CCPURGE_PLUGIN_URL', plugin_dir_url( __FILE__ ));
 define('CCPURGE_PLUGIN_PATH', plugin_dir_path(__FILE__) );
@@ -67,14 +67,19 @@ add_filter("plugin_action_links_" . CCPURGE_PLUGIN_BASENAME, 'ccpurge_plugin_set
 	Transaction Logging
 */
 
-function ccpurge_transaction_logging($message='empty', $status='success') {
+function ccpurge_transaction_logging($message='empty', $status='success')
+{
 	global $wpdb;
+
+	$ccpurge = new CCPURGE_API;
+	$logging_disabled = $ccpurge->ccpurge_options['ccpurge_logging_disabled'];
+	
 	if( isset($_REQUEST['message']) ){ $message = $_REQUEST['message']; }
 	if( isset($_REQUEST['status']) ){ $status = $_REQUEST['status']; }
 	if($status == 'print_debug'){
 		print $message;
 	}
-	else{
+	elseif( $logging_disabled != 1 ){
 		$total = wp_count_posts( 'ccpurge_log_entries' );
 		$log_entry = array(
 		  'post_title' => (strtoupper($status) . ' : ' . strtolower(substr($message, 0, 150))),

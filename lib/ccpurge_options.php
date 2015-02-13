@@ -13,12 +13,13 @@ $ccpurge_options 					= get_option('ccpurge_options');
 $ccpurge_email 						= isset($ccpurge_options['email']) ? $ccpurge_options['email'] : '';
 $ccpurge_token 						= isset($ccpurge_options['token']) ? $ccpurge_options['token'] : '';
 $ccpurge_account 					= $ccpurge_options['account'] != "" ? $ccpurge_options['account'] : $ccpurge->get_wordpress_domain();;
-$ccpurge_console_details 	= isset($ccpurge_options['console_details']) ? $ccpurge_options['console_details'] : "0";
-$ccpurge_console_debugger = isset($ccpurge_options['console_debugger']) ? $ccpurge_options['console_debugger'] : "0";
-$ccpurge_console_calls 		= isset($ccpurge_options['console_calls']) ? $ccpurge_options['console_calls'] : "0";
-$ccpurge_auto_purge 			= isset($ccpurge_options['auto_purge']) ? $ccpurge_options['auto_purge'] : "0";
-$show_debugging 			    = isset($ccpurge_options['show_debugging']) ? $ccpurge_options['show_debugging'] : "0";
-$ccpurge_url 							= isset($ccpurge_options['ccpurge_url']) ? $ccpurge_options['ccpurge_url'] : get_home_url();
+$ccpurge_console_details 			= isset($ccpurge_options['console_details']) ? $ccpurge_options['console_details'] : "0";
+$ccpurge_console_debugger 			= isset($ccpurge_options['console_debugger']) ? $ccpurge_options['console_debugger'] : "0";
+$ccpurge_console_calls 				= isset($ccpurge_options['console_calls']) ? $ccpurge_options['console_calls'] : "0";
+$ccpurge_logging_disabled 			= isset($ccpurge_options['ccpurge_logging_disabled']) ? $ccpurge_options['ccpurge_logging_disabled'] : "0";
+$ccpurge_auto_purge 				= isset($ccpurge_options['auto_purge']) ? $ccpurge_options['auto_purge'] : "0";
+$show_debugging 			    	= isset($ccpurge_options['show_debugging']) ? $ccpurge_options['show_debugging'] : "0";
+$ccpurge_url 						= isset($ccpurge_options['ccpurge_url']) ? $ccpurge_options['ccpurge_url'] : get_home_url();
 
 ?>
 
@@ -119,6 +120,7 @@ jQuery(document).ready(function($){
 					<th><label for="category_base">Debugging Options</label></th>
 					<td class="col1"></td>
 					<td class="col2">
+						<input type=checkbox name="ccpurge_options[ccpurge_logging_disabled]"  value="1" <?php checked( "1", $ccpurge_logging_disabled); ?>> Turn Off Logging<br />
 						<input type=checkbox name="ccpurge_options[console_details]"  value="1" <?php checked( "1", $ccpurge_console_details); ?>> Details to console (debug)<br />
 						<!-- input type=checkbox name="ccpurge_options[console_debugger]"  value="1" <?php checked( "1", $ccpurge_console_debugger); ?>> errors to console (debug)<br / -->
 						<input type=checkbox name="ccpurge_options[console_calls]"  value="1" <?php checked( "1", $ccpurge_console_calls); ?>> API calls to console (debug)<br />

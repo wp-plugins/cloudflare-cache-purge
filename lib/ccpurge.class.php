@@ -17,11 +17,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 class CCPURGE_API {
 
-	var $ccpurge_endpoint 		  = "https://www.cloudflare.com/api_json.html";
-	var $ccpurge_methods 			  = array();
+	var $ccpurge_endpoint 		  	= "https://www.cloudflare.com/api_json.html";
+	var $ccpurge_methods 			= array();
 	var $ccpurge_options 		    = array();
-	var $ccpurge_url     				= '';
-	var $ccpurge_suppress_debug = false;
+	var $ccpurge_url     			= '';
+	var $ccpurge_suppress_debug 	= false;
 
 	function __construct() {
 		$this->ccpurge_options = get_option('ccpurge_options');

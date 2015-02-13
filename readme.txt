@@ -2,7 +2,7 @@
 Contributors: shanaver
 Tags: CloudFlare, cache purge, cache clear, API
 Requires at least: 3.0.1
-Tested up to: 3.8.1
+Tested up to: 4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -72,6 +72,10 @@ No, just the page/post permalink & the homepage.  You would have to manually pur
 
 = 1.0.7
 * Fix ajax error on post update
+
+= 1.1
+* Add option to disable logging
+* Verify for Wordpress 4.1
 
 == Upgrade Notice ==
 
