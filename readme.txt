@@ -2,7 +2,7 @@
 Contributors: shanaver
 Tags: CloudFlare, cache purge, cache clear, API
 Requires at least: 3.0.1
-Tested up to: 4.1
+Tested up to: 4.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -76,6 +76,11 @@ No, just the page/post permalink & the homepage.  You would have to manually pur
 = 1.1
 * Add option to disable logging
 * Verify for Wordpress 4.1
+
+= 1.2
+* Don't die() on Wordpress remote post error in API call - log instead
+* Verify for Wordpress 4.2
+
 
 == Upgrade Notice ==
 

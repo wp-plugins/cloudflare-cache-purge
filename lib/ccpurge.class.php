@@ -88,11 +88,8 @@ class CCPURGE_API {
 			print_r($results);
 		}
 
-		if( is_object($results) ){
-			if( get_class($results) == 'WP_Error' ){
-				$this->return_json_error('Wordpress Error - ' . json_encode($results));
-				die();
-			}
+		if( is_wp_error( $results ) ){
+			ccpurge_transaction_logging(print_r($results->get_error_message(), true), 'Wordpress Error');
 		}
 
 		if($results['response']['code'] != '200'){
